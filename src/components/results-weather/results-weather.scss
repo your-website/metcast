@@ -1,0 +1,26 @@
+.results-weather {
+    width: 400px;
+}
+
+.results-weather__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.results-weather__content-title {
+    margin: 0;
+}
+
+.results-weather__img {
+    width: 70px;
+    height: auto;
+}
+
+.results-weather__btn {
+    width: 35px;
+    margin-bottom: 5px;
+}
