@@ -72,7 +72,7 @@ export default class ResultsWeather extends Component {
   };
 
   hasRain = (cloud) => {
-    if (cloud === 'небольшой проливной дождь' || cloud === 'дождь' || cloud === 'гроза') {
+    if (cloud === 'небольшой проливной дождь' || cloud === 'небольшой дождь' || cloud === 'дождь' || cloud === 'гроза') {
       this.setState({ 
         hasRain: true
       });
