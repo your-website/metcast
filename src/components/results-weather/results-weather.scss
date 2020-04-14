@@ -1,6 +1,14 @@
 .results-weather {
     width: 400px;
-}
+
+    @media screen and (max-width: 500px) {
+        width: 290px;
+    };
+
+    @media screen and (max-width: 350px) {
+        width: 250px;
+    };
+};
 
 .results-weather__container {
     display: flex;
@@ -9,18 +17,18 @@
     
     margin: 0;
     padding: 0;
-}
+};
 
 .results-weather__content-title {
     margin: 0;
-}
+};
 
 .results-weather__img {
     width: 70px;
     height: auto;
-}
+};
 
 .results-weather__btn {
     width: 35px;
     margin-bottom: 5px;
-}
+};

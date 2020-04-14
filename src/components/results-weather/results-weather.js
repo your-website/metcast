@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import WeatherService from '../../services/weather-service';
 
 import './results-weather.scss';
+import ErrorIndicator from '../error-indicator';
+import API_KEY from '../../const/api';
 
 export default class ResultsWeather extends Component {
   weatherService = new WeatherService();
@@ -9,7 +11,8 @@ export default class ResultsWeather extends Component {
   state = {
     data: {
     },
-    hasRain: false
+    hasRain: false,
+    hasError: false
   };
 
   componentDidMount() {
@@ -22,14 +25,23 @@ export default class ResultsWeather extends Component {
     };
   };
 
+  componentDidCatch() {
+    this.setState({
+      hasError: true
+    });
+  };
+
   getData = () => {
-    const api = '5202b3fb482c3b9762b51c55a72f1230';
-    this.weatherService.getAllWeather(this.props.town, 'ru', api)
+    this.weatherService.getAllWeather(this.props.town, 'ru', API_KEY)
       .then((res) => {
         this.setState({
           data: res
         });
         this.hasRain(res.cloud);
+      })
+      .catch((err) => {
+        console.log(err)
+        this.props.setError()
       });
   };
 
@@ -42,11 +54,11 @@ export default class ResultsWeather extends Component {
     } else if (temp > 20) {
       clothes = 'Рекомендуем надеть шорты и майку';
     } else if (temp > 13) {
-      clothes = 'Рекомендуем надеть брюки и рубашку';
+      clothes = 'Рекомендуем надеть штаны и рубашку';
     } else if (temp > 0) {
-      clothes = 'Рекомендуем надеть брюки, кофту и куртку';
+      clothes = 'Рекомендуем надеть штаны, кофту и куртку';
     } else if (temp < 0 && temp > -10) {
-      clothes = 'Рекомендуем надеть брюки, кофту и осеннюю куртку';
+      clothes = 'Рекомендуем надеть штаны, кофту и осеннюю куртку';
     } else if (temp < -10 && temp > -20 ) {
       clothes = 'Рекомендуем надеть туплые штаны, кофту и зимнюю куртку';
     } else {
@@ -72,6 +84,11 @@ export default class ResultsWeather extends Component {
   };
 
   render() {
+
+    if (this.state.hasError) {
+      return <ErrorIndicator />
+    };
+
     const { cloud, town, img, temp, wind } = this.state.data;
     const { hasRain } = this.state;
     const { clothes } = this.getClothes();
@@ -101,7 +118,6 @@ export default class ResultsWeather extends Component {
     );
   };
 };
-
 
 const UmbrellaView = () => {
   return (

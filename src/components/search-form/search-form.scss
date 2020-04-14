@@ -7,4 +7,17 @@
     justify-content: space-between;
     width: 300px;
     margin-bottom: 20px;
+    position: relative;
+
+    @media screen and (max-width: 500px) {
+        width: 270px;
+    };
+};
+
+.form__error {
+    position: absolute;
+    top: -22px;
+    left: 4px;
+    font-size: 14px;
+    color: red;
 }
