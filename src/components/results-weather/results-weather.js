@@ -57,7 +57,7 @@ export default class ResultsWeather extends Component {
       clothes = 'Рекомендуем надеть штаны и рубашку';
     } else if (temp > 0) {
       clothes = 'Рекомендуем надеть штаны, кофту и куртку';
-    } else if (temp < 0 && temp > -10) {
+    } else if (temp <= 0 && temp > -10) {
       clothes = 'Рекомендуем надеть штаны, кофту и осеннюю куртку';
     } else if (temp < -10 && temp > -20 ) {
       clothes = 'Рекомендуем надеть туплые штаны, кофту и зимнюю куртку';
