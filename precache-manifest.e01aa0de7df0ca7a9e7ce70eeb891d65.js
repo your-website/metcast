@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "19507a8de94b3dd15272108ca37c96b0",
+    "revision": "96a074c5305b27f60ce61cba85dfbe5e",
     "url": "/metcast/index.html"
   },
   {
-    "revision": "f861c2768c204b5c7583",
+    "revision": "0d32ddd653e80ddca1cf",
     "url": "/metcast/static/css/main.9afd29f7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/metcast/static/js/2.2acdaebd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f861c2768c204b5c7583",
-    "url": "/metcast/static/js/main.016440d3.chunk.js"
+    "revision": "0d32ddd653e80ddca1cf",
+    "url": "/metcast/static/js/main.58ef0670.chunk.js"
   },
   {
     "revision": "e8cbedabfcda4c91309b",
