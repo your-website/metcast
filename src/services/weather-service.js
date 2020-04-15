@@ -22,7 +22,7 @@ export default class WeatherService {
         cloud: data.weather[0].description,
         temp: Math.floor(data.main.temp),
         wind: data.wind.speed,
-        img: `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+        img: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
         town: data.name,
         icon: data.weather[0].icon
       };
