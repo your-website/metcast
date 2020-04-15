@@ -18,8 +18,11 @@ export default class WeatherService {
     };
 
     _transformData = (data) => {
+      const str = data.weather[0].description;
+      const cloud = str.substr(0,1).toUpperCase() + str.substr(1);
+      
       return {
-        cloud: data.weather[0].description,
+        cloud,
         temp: Math.floor(data.main.temp),
         wind: data.wind.speed,
         img: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
